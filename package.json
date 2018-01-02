@@ -1,7 +1,7 @@
 {
   "name": "bhserver",
   "version": "1.0.0",
-  "description": "This is real time Kafka to WebSocket module for BloodhoundSSC",
+  "description": "This is real-time Kafka to WebSocket module for BloodhoundSSC",
   "main": "server.js",
   "dependencies": {
     "avsc": "^5.0.6",

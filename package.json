@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node server.js",
+    "test": "echo ok",
     "start": "node server.js"
   },
   "repository": {

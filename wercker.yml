@@ -7,7 +7,7 @@ build:
 
 push-to-releases:
   steps:
-    # Push to public docker repo Container Registry (CR)
+    # Push to public docker repo Container Registry (CR) A
     - internal/docker-push:
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         cmd: node /pipeline/source/app.js

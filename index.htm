@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>WS example</title>
+</head>
+
+<body>
+  <h2>Socket messages: </h2>
+  <pre id="response"></pre>
+  <hr/>
+<!--
+  <h2>POST message response: </h2>
+  <pre id="post-response"></pre>
+-->
+  <script>
+var idx = 0;
+  // Extremely simplified here, no error handling or anything
+document.body.onload = function() {
+
+    'use strict';
+
+  // First the socket requesta
+  function socketExample() {
+    console.log('Creating socket');
+    let socket = new WebSocket('ws://129.146.69.162:8282/');
+
+    socket.onopen = function() {
+
+      console.log('Socket open.');
+      socket.send(JSON.stringify({message: 'Client connected '}));
+      console.log('Message sent.')
+    };
+    socket.onmessage = function(message) {
+      idx++;
+      console.log('Socket server message', message);
+      if (idx % 200 == 0)
+      {
+        idx = 0;
+        document.getElementById('response').innerHTML = "";
+      }
+
+      document.getElementById('response').innerHTML = message.data + "<br>" + document.getElementById('response').innerHTML ;//JSON.stringify(data, null, 2);
+
+    };
+  }
+
+  // Now the simple POST demo
+  /*function postExample() {
+
+    console.log('Creating regular POST message');
+
+    fetch('/', {
+      method: 'post',
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({message: 'What is the meaning of post-life, the universe and everything?'})
+    })
+    .then(response => response.json())
+    .then(function (data) {
+
+      console.log('POST response:', data);
+      document.getElementById('post-response').innerHTML = JSON.stringify(data, null, 2);
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });
+  }*/
+
+  // Call them both;
+
+  socketExample();
+  //postExample();
+}
+  </script>
+</body>
+</html>
+

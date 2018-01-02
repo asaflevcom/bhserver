@@ -1,0 +1,31 @@
+{
+  "name": "bhserver",
+  "version": "1.0.0",
+  "description": "This is real time Kafka to WebSocket module for BloodhoundSSC",
+  "main": "server.js",
+  "dependencies": {
+    "avsc": "^5.0.6",
+    "express": "^4.16.0",
+    "kafka-node": "^2.2.3",
+    "pm2": "^2.7.1",
+    "ws": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asaflevcom/bhserver.git"
+  },
+  "keywords": [
+    "bloodhound"
+  ],
+  "author": "Asaf Lev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asaflevcom/bhserver/issues"
+  },
+  "homepage": "https://github.com/asaflevcom/bhserver#readme"
+}

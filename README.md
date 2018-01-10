@@ -1,4 +1,4 @@
-# BHServer
+# BHServer Project
 
 BHServer is responsible of getting the data in real-time from Bloodhound SSC into a live dashboard
 
